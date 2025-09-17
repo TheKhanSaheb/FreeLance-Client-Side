@@ -140,7 +140,7 @@ const HomeLayOut = () => {
           <div className="bg-gray-800 rounded-xl p-8 hover:scale-105 transform transition">
             <h3 className="text-2xl font-bold mb-4">Collaborate</h3>
             <p>Work with others, complete tasks, and grow your portfolio.</p>
-            <h1></h1>
+            
           </div>
         </div>
       </section>
