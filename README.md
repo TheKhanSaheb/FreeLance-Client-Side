@@ -5,7 +5,7 @@ Freelance Task Hub is a web platform where users can **post tasks** and **hire f
 It allows easy task management with full **CRUD functionality**, user authentication, and a clean responsive design.
 
 ## 🌐 Live Site
-[Live Site URL](https://your-client-live-link.netlify.app)
+[Live Site URL](https://freelance-3a850.web.app/)
 
 ## 🚀 Features
 - 🔐 **Firebase Authentication** with Email/Password and Google login.  
