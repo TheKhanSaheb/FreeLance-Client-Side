@@ -16,7 +16,7 @@ const AddTask = () => {
     console.log('New Task:', newTask);
 
     // Send to server
-    fetch('http://localhost:3000/jobs', {
+    fetch('https://210-qav2gpe8y-rakins-projects-4190f75f.vercel.app/jobs', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newTask)

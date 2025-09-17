@@ -29,7 +29,7 @@ const Update = () => {
       attachment: form.attachment.value,
     };
 
-    fetch(`http://localhost:3000/jobs/${id}`, {
+    fetch(`https://210-qav2gpe8y-rakins-projects-4190f75f.vercel.app/jobs/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedJob),

@@ -16,7 +16,7 @@ import Register from "./UserPage.jsx/Register";
 import Login from "./UserPage.jsx/Login";
 import PrivateRoute from "./Components/PrivateRoute";
 import Update from "./Components/Update";
-import TaskDetails from "./Components/TaskDetails";
+// import TaskDetails from "./Components/TaskDetails";
 
 
 const router = createBrowserRouter([
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/BrowseTask",
-        loader :()=>fetch('http://localhost:3000/jobs'),
+        loader :()=>fetch('https://210-qav2gpe8y-rakins-projects-4190f75f.vercel.app/jobs'),
         element: <BrowseTask />,
       },
       {path:"/AddTask",
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       },
 {
   path: "/PostedTask",
-  loader: () => fetch("http://localhost:3000/jobs"),
+  loader: () => fetch("https://210-qav2gpe8y-rakins-projects-4190f75f.vercel.app/jobs"),
   element: (
     <PrivateRoute>
       <MyPostedTask />
