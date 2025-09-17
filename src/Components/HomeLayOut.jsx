@@ -1,4 +1,6 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { FaFacebook } from "react-icons/fa";
 import { FaBriefcase } from "react-icons/fa";
@@ -9,8 +11,75 @@ const HomeLayOut = () => {
   const words = ["Innovate", "Build", "Learn", "Repeat!"];
   const colors = ["#F59E0B", "#10B981", "#3B82F6", "#EF4444"];
 
+    const images = [
+    "https://i.ibb.co.com/Gvk8NWvK/desktop.jpg",
+    "https://i.ibb.co.com/PvrrsMLW/Skills-Required-For-Current-Job-And-Future-Goals-Powerpoint-Slide-Design-Ideas-1.jpg",
+    "https://i.ibb.co.com/WWGK3zY9/Job-Search-Strategy-Power-Point-Presentation.jpg",
+  ];
+
+  
+  const [current, setCurrent] = useState(0);
+
+  // Auto play every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+
+
   return (
-    <div className="bg-gray-900 text-white">
+    <>
+    <div className="bg-gray-900 text-white pt-10">
+         <div className="relative w-full max-w-5xl mx-auto overflow-hidden rounded-2xl shadow-lg">
+      {/* Images */}
+      <div
+        className="flex transition-transform duration-700"
+        style={{ transform: `translateX(-${current * 100}%)` }}
+      >
+        {images.map((src, index) => (
+          <img
+            key={index}
+            src={src}
+            alt={`Slide ${index + 1}`}
+            className="w-full flex-shrink-0"
+          />
+        ))}
+      </div>
+
+      {/* Prev Button */}
+      <button
+        onClick={() =>
+          setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1))
+        }
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-600"
+      >
+        ❮
+      </button>
+
+      {/* Next Button */}
+      <button
+        onClick={() => setCurrent((prev) => (prev + 1) % images.length)}
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-600"
+      >
+        ❯
+      </button>
+
+      {/* Indicators */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        {images.map((_, index) => (
+          <div
+            key={index}
+            onClick={() => setCurrent(index)}
+            className={`w-3 h-3 rounded-full cursor-pointer ${
+              current === index ? "bg-white" : "bg-gray-500"
+            }`}
+          ></div>
+        ))}
+      </div>
+    </div>
 
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
@@ -52,6 +121,8 @@ const HomeLayOut = () => {
           </div>
         </div>
       </section>
+
+
 
       {/* User Experience Section */}
       <section className="py-24 px-6 md:px-24 text-center">
@@ -103,6 +174,11 @@ const HomeLayOut = () => {
       </section>
 
     </div>
+
+
+  
+    </>
+
   );
 };
 
