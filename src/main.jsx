@@ -80,6 +80,7 @@ const router = createBrowserRouter([
         loader:({params})=>fetch(`https://freeee-lovat.vercel.app/jobs/${params.id}`),
         element:<TaskDetails />
 
+        
       }
       
     ]}])
