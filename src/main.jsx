@@ -30,6 +30,7 @@ const router = createBrowserRouter([
         element: <HomeLayOut />,
       },
       {
+        //vercel link
         //https://freeee-lovat.vercel.app
         path: "/BrowseTask",
         loader :()=>fetch('https://freeee-lovat.vercel.app/jobs'),
@@ -75,12 +76,13 @@ const router = createBrowserRouter([
   ),
 
       },
+
+
       {
         path:'/taskDetails/:id',
         loader:({params})=>fetch(`https://freeee-lovat.vercel.app/jobs/${params.id}`),
         element:<TaskDetails />
 
-        
       }
       
     ]}])
