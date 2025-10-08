@@ -29,7 +29,7 @@ const MyPostedTask = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://210-qav2gpe8y-rakins-projects-4190f75f.vercel.app/jobs/${id}`, {
+        fetch(`https://freeee-lovat.vercel.app/jobs${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

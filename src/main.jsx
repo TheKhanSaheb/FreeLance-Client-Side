@@ -16,7 +16,7 @@ import Register from "./UserPage.jsx/Register";
 import Login from "./UserPage.jsx/Login";
 import PrivateRoute from "./Components/PrivateRoute";
 import Update from "./Components/Update";
-// import TaskDetails from "./Components/TaskDetails";
+import TaskDetails from "./Components/TaskDetails";
 
 
 const router = createBrowserRouter([
@@ -30,8 +30,9 @@ const router = createBrowserRouter([
         element: <HomeLayOut />,
       },
       {
+        //https://freeee-lovat.vercel.app
         path: "/BrowseTask",
-        loader :()=>fetch('https://210-qav2gpe8y-rakins-projects-4190f75f.vercel.app/jobs'),
+        loader :()=>fetch('https://freeee-lovat.vercel.app/jobs'),
         element: <BrowseTask />,
       },
       {path:"/AddTask",
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
       },
 {
   path: "/PostedTask",
-  loader: () => fetch("https://210-qav2gpe8y-rakins-projects-4190f75f.vercel.app/jobs"),
+  loader: () => fetch("https://freeee-lovat.vercel.app/jobs"),
   element: (
     <PrivateRoute>
       <MyPostedTask />
@@ -64,7 +65,7 @@ const router = createBrowserRouter([
       {
         
   path: "/update/:id",
-  loader:({params}) => fetch(`http://localhost:3000/jobs/${params.id}`),
+  loader:({params}) => fetch(`https://freeee-lovat.vercel.app/jobs/${params.id}`),
   
   
   element: (
@@ -76,7 +77,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/taskDetails/:id',
-        loader:({params})=>fetch(`http://localhost:3000/jobs/${params.id}`),
+        loader:({params})=>fetch(`https://freeee-lovat.vercel.app/jobs/${params.id}`),
         element:<TaskDetails />
 
       }
